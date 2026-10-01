@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DisasterShield | Flood Watch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-icon">DS</div>
+            <div>
+                <h1>DisasterShield</h1>
+                <p>Community Flood Watch</p>
+            </div>
+        </div>
+
+        <div class="location">
+            <span>📍</span>
+            <div>
+                <strong>Macherla</strong>
+                <small>Guntur, Andhra Pradesh</small>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <div>
+                <span class="eyebrow">COMMUNITY SAFETY DASHBOARD</span>
+                <h2>Flood Monitoring & Early Warning</h2>
+                <p>
+                    Local hazard information and community reports
+                    in one place.
+                </p>
+            </div>
+            <div class="hero-icon">🌧️</div>
+        </section>
+
+        <div class="demo-notice">
+            <strong>DEMO MODE</strong>
+            Sample alerts are displayed for demonstration.
+            They are not live forecasts or official warnings.
+        </div>
+
+        <section class="summary-grid">
+            <article class="summary-card">
+                <span class="summary-icon">🌊</span>
+                <p>Current Demo Risk</p>
+                <h2 id="riskLevel">Moderate</h2>
+                <small id="riskDescription">
+                    Sample risk information
+                </small>
+            </article>
+
+            <article class="summary-card">
+                <span class="summary-icon">🔔</span>
+                <p>Sample Alerts</p>
+                <h2 id="alertCount">3</h2>
+                <small>Demonstration alerts</small>
+            </article>
+
+            <article class="summary-card">
+                <span class="summary-icon">👥</span>
+                <p>Community Reports</p>
+                <h2 id="reportCount">0</h2>
+                <small>Reports submitted on this browser</small>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Flood Alerts</h2>
+                    <p>Review sample alerts for the selected area.</p>
+                </div>
+
+                <select id="severityFilter" aria-label="Filter alerts">
+                    <option value="all">All severity levels</option>
+                    <option value="High">High</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+
+            <div id="alertList" class="alert-list"></div>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Community Hazard Reports</h2>
+                    <p>
+                        Share observations about possible local hazards.
+                    </p>
+                </div>
+            </div>
+
+            <form id="reportForm">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="reportType">Hazard type</label>
+                        <select id="reportType" required>
+                            <option value="">Select hazard</option>
+                            <option value="Waterlogging">Waterlogging</option>
+                            <option value="Road flooding">Road flooding</option>
+                            <option value="Rising water level">
+                                Rising water level
+                            </option>
+                            <option value="Blocked drainage">
+                                Blocked drainage
+                            </option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="reportLocation">Location</label>
+                        <input
+                            id="reportLocation"
+                            type="text"
+                            placeholder="Area or nearby landmark"
+                            required
+                            maxlength="100"
+                        >
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="reportDetails">Report details</label>
+                    <textarea
+                        id="reportDetails"
+                        placeholder="Describe what you observed..."
+                        required
+                        maxlength="500"
+                        rows="4"
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    Submit Hazard Report
+                </button>
+
+                <p id="formMessage" role="status"></p>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Recent Community Reports</h2>
+                    <p>Reports submitted using this browser.</p>
+                </div>
+            </div>
+
+            <div id="communityReports" class="report-list">
+                <p class="empty-message">
+                    No community reports submitted yet.
+                </p>
+            </div>
+        </section>
+
+        <section class="panel safety-panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Flood Safety Guide</h2>
+                    <p>General precautions during flooding.</p>
+                </div>
+                <span class="safety-icon">🛟</span>
+            </div>
+
+            <div class="safety-grid">
+                <article>
+                    <h3>🌊 During flooding</h3>
+                    <ul>
+                        <li>Move away from flooded areas.</li>
+                        <li>Never walk or drive through floodwater.</li>
+                        <li>Follow official evacuation instructions.</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <h3>⚡ Stay protected</h3>
+                    <ul>
+                        <li>Stay away from fallen power lines.</li>
+                        <li>Keep drinking water and essentials ready.</li>
+                        <li>Check official emergency updates.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <footer>
+            <p>
+                DisasterShield is a hackathon prototype.
+                For emergencies, follow official authorities.
+            </p>
+            <p>© 2026 DisasterShield</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
